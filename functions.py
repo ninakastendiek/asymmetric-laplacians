@@ -390,22 +390,6 @@ def compute_second_order(G, N, alphas, seed=12):
                 res.phi_L_alpha = alpha_prev
         res.phi_L.append(phi_L_value)
 
-        # # zeta
-        # if res.phi_zeta_alpha is None:
-        #     A_plus_min = np.min(A_plus[A_plus != 0])
-        #     real_margin = (A_plus_min * res.lambda2_L0) + min(0.5*dout_din)
-        #     if real_margin > 0: 
-        #         phi2 = np.arctan(max(np.abs(A_minus).sum(axis=1)) / (real_margin))
-        #         res.phi_zeta.append(phi2)
-        #         cond = mixed_condition(gamma, m, gamma_m_ratio, phi2, sigma2_max=L_norm_approx) 
-        #         if not cond: 
-        #             res.phi_zeta_alpha = alpha_prev
-        #     else: 
-        #         res.phi_zeta.append(np.nan)
-        #         res.phi_zeta_alpha = alpha_prev
-        # else: 
-        #     res.phi_zeta.append(np.nan)
-
         # rho0
         phi_rho0_alpha_value = np.nan
         if res.phi_rho0_alpha is None:
